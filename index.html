@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Earn BTC - Bukolooto Cyber</title>
+<style>
+body{background:#000;color:#fff;font-family:monospace;margin:0;padding:12px;text-align:center}
+h1{color:#0ff;text-shadow:0 0 10px #0ff}
+.card{background:#111;border:1px solid #0ff;border-radius:12px;padding:12px;margin:10px 0;text-align:left}
+.btn{background:#0ff;color:#000;border:0;padding:10px 14px;border-radius:8px;font-weight:900;width:100%;margin-top:6px}
+small{color:#aaa} .sats{color:#fc0;font-weight:900} .qr{background:#fff;padding:6px;border-radius:8px;display:inline-block}
+</style>
+</head>
+<body>
+<h1>ASILAM CYBER<br>BUKOLOOTO</h1>
+<p>Complete Tasks → Win BTC/Sats → Donate</p>
+
+<div class=qr><img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=bitcoin:bc1qyeudqvy0hyl3f60alagrmk035wdpqxcsv39ftn"></div>
+<p style="font-size:9px;word-break:break-all">bc1qye...9ftn</p>
+
+<div class=card>
+<b>1. Stacker News — 1000 Sats</b><br>
+<small>Post your tech story, get upvoted = sats</small><br>
+<span class=sats>Pay: 100 - 5000 sats</span>
+<button class=btn onclick="window.open('https://stacker.news')">START TASK 1</button>
+</div>
+
+<div class=card>
+<b>2. THNDR Games — 500 Sats/day</b><br>
+<small>Play Solitaire/Tetris, instant payout</small><br>
+<span class=sats>Pay: 20 sats/game</span>
+<button class=btn onclick="window.open('https://thndr.games')">START TASK 2</button>
+</div>
+
+<div class=card>
+<b>3. Microlancer — 5000 Sats</b><br>
+<small>Follow, test apps, simple jobs</small><br>
+<span class=sats>Pay: 500-5000 sats/task</span>
+<button class=btn onclick="window.open('https://microlancer.io')">START TASK 3</button>
+</div>
+
+<div class=card>
+<b>4. Donate Your Winnings</b><br>
+<small>You earned sats? Support Bukolooto</small><br>
+<div style="display:flex;gap:6px;margin-top:6px">
+<button class=btn style="background:#fc0" onclick="donate(0.00001)">DONATE 1000 SATS</button>
+<button class=btn style="background:#fff" onclick="donate(0.00005)">DONATE 5000 SATS</button>
+</div>
+</div>
+
+<p id=status style="color:#0f0;margin-top:12px">Ready to earn...</p>
+
+<script>
+function donate(a){
+ var url="bitcoin:bc1qyeudqvy0hyl3f60alagrmk035wdpqxcsv39ftn?amount="+a;
+ document.querySelector('.qr img').src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data="+encodeURIComponent(url);
+ document.getElementById('status').innerText="Donate QR updated: "+(a*100000000)+" SATS";
+}
+</script>
+</body>
+</html>
